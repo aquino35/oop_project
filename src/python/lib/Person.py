@@ -16,7 +16,7 @@ class Person(ABC):
     _gender : str
     _height : str
     _weight : int
-    _age : int = 0
+    _age : int
     #_person_count : ClassVar[int] += 1
 
 
@@ -81,5 +81,5 @@ class Person(ABC):
 
 
     @abstractmethod
-    def talk() -> str:
+    def talk(self) -> str:
         pass
