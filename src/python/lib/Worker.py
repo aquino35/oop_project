@@ -28,5 +28,10 @@ class Worker(Person):
         self._weekly_hours = weekly_hours
 
 
+    @salary.setter
+    def salary(self, salary: int) -> None:
+        self._salary = salary
+
+
     def talk(self) -> str:
         print(f'Hello! My name is {self._first_name} {self._last_name}, I am a worker that works {self.weekly_hours} a week and I have a salary of {self._salary}')
