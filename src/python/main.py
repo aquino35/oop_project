@@ -5,7 +5,6 @@ from lib.lawyer import Lawyer
 from lib.student import Student
 
 
-
 _worker = Worker("Osvaldo", "Aquino", "M", "5'8", 170, 22, 40, 50000)
 _worker.talk()
 
