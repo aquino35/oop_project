@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
 from dataclasses import dataclass
 from .person import Person
 from typing import ClassVar
@@ -5,15 +9,13 @@ from typing import ClassVar
 
 @dataclass
 class Worker(Person):
-    """
-    ## Help on the Worker module:
-    ---------------------
+    """## Help on the Worker module:
+    --------------------------------
     ### Name
 
         Worker 
 
     ---------------------
-
     ### Description 
 
         The worker class is developed to simulate a person that is a worker. 
@@ -43,7 +45,6 @@ class Worker(Person):
         @example: worker = Worker("Osvaldo", "Aquino", "M", "5'8", 170, 22, 40, 50000)
 
     ---------------------
-
     ### Package Contents
 
         - _first_name
@@ -65,7 +66,6 @@ class Worker(Person):
         - salary() || salary(salary:int)
 
     ---------------------
-
     @author: Osvaldo Aquino
     """
 
@@ -76,6 +76,7 @@ class Worker(Person):
 
     def __post_init__(self):
         """ Post init function used to increment the global class variables used in this object."""
+
         Worker._person_count+=1 
         Worker._worker_count+=1
 
@@ -84,6 +85,7 @@ class Worker(Person):
     def weekly_hours(self) -> int:
         """ @return: Weekly hours of the worker.
             @example: worker.weekly_hours """
+
         return self._weekly_hours
 
 
@@ -91,26 +93,30 @@ class Worker(Person):
     def salary(self) -> int:
         """ @return: Salary of the worker.
             @example: worker.salary """
+
         return self._salary
 
 
     @weekly_hours.setter
     def weekly_hours(self, weekly_hours: int) -> None:
-        """ Sets the weekly hours of the worker given an integer.
+        """ Sets the weekly hours attribute of the worker given an integer.
             @param weekly_hours: Integer that represents the new weekly hours that will be set.
             @example: worker.weekly_hours = 40 """
+
         self._weekly_hours = weekly_hours
 
 
     @salary.setter
     def salary(self, salary: int) -> None:
-        """ Sets the salary of the worker given an integer.
+        """ Sets the salary attribute of the worker given an integer.
             @param salary: Integer that represents the new salary that will be set.
             @example: worker.salary = 90000 """
+
         self._salary = salary
 
 
     def talk(self) -> str:
-        """ This method is used to print out useful information about the worker object.
+        """ Prints out useful information about the worker object.
             @example: worker.talk()"""
+
         print(f'Hello! My name is {self._first_name} {self._last_name}, I am a worker that works {self.weekly_hours} a week and I have a salary of {self._salary}.')

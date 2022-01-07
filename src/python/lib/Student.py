@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
 from dataclasses import dataclass
 from .person import Person
 from typing import ClassVar
@@ -5,15 +9,13 @@ from typing import ClassVar
 
 @dataclass
 class Student(Person):
-    """
-    ## Help on the Student module:
-    ---------------------
+    """## Help on the Student module:
+    ----------------------------------
     ### Name
 
         Student 
 
     ---------------------
-    
     ### Description 
 
         The student class is developed to simulate a person that is a student. 
@@ -43,7 +45,6 @@ class Student(Person):
         @example: student = Student("Osvaldo", "Aquino", "M", "5'8", 170, 25, "UPRM", "ICOM")
 
     ---------------------
-
     ### Package Contents
 
         - _first_name
@@ -66,7 +67,6 @@ class Student(Person):
         - major() || major(major:str)
 
     ---------------------
-
     @author: Osvaldo Aquino
     """
 
@@ -76,17 +76,14 @@ class Student(Person):
 
 
     def __post_init__(self):
-
         """ Post init function used to increment the global class variables used in this object."""
-        
+
         Student._person_count+=1
         Student._student_count+=1
 
 
-
     @property
     def institution(self) -> str:
-
         """ @return: Institution of the student.
             @example: student.institution """
 
@@ -95,7 +92,6 @@ class Student(Person):
 
     @property
     def major(self) -> str:
-
         """ @return: Major of the student.
             @example: student.major """
 
@@ -104,8 +100,7 @@ class Student(Person):
 
     @institution.setter
     def institution(self, institution: str) -> None:
-
-        """ Sets the institution of the student given a string.
+        """ Sets the institution attribute of the student given a string.
             @param institution: String that represents the new institution that will be set.
             @example: student.institution = "UPRM" """
 
@@ -114,8 +109,7 @@ class Student(Person):
 
     @major.setter
     def major(self, major: str) -> None:
-
-        """ Sets the major of the student given a string.
+        """ Sets the major attribute of the student given a string.
             @param major: String that represents the new major that will be set.
             @example: student.major = "ICOM" """
 
@@ -123,15 +117,13 @@ class Student(Person):
 
 
     def talk(self) -> str:
-
         """ Prints out useful information about the student object.
             @example: student.talk()"""
 
         print(f'Hello! My name is {self._first_name} {self._last_name}, I am a student at {self.institution}, studying {self._major}')
 
     
-    def calculate(self, *args: int):
-
+    def calculate(self, *args: int) -> str:
         """ Calculates the final grade of a student given a set of grades.
             @param *args: Integers representing all the grades the student has accumulated.
             @print: The final grade of the student

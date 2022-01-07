@@ -32,10 +32,22 @@ print(_doctor._person_count)
 _doctor.talk()
 
 _engineer =  Engineer("Osvaldo", "Aquino", "M", "5'8", 170, 22, 40, 100000, "Computer", "Home", True)
+print(_engineer._person_count)
+print(_engineer._worker_count)
+print(_engineer._engineer_count)
 _engineer.talk()
 
 _lawyer = Lawyer("Osvaldo", "Aquino", "M", "5'8", 170, 22, 40, 100000, "Vivoni Law Office, LLC")
 _lawyer.talk()
+print(_lawyer._person_count)
+print(_lawyer._worker_count)
+print(_lawyer._lawyer_count)
+
+
+_doctor1 = Doctor("Ale", "Pagan", "M", "5'8", 170, 22, 40, 90000, "Generalist")
+print(_doctor1._doctor_count)
+print(_doctor1._person_count)
+
 
 _student = Student("Osvaldo", "Aquino", "M", "5'8", 170, 25, "UPRM", "ICOM")
 _student.talk()
