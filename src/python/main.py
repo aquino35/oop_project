@@ -5,10 +5,30 @@ from lib.lawyer import Lawyer
 from lib.student import Student
 
 
-_worker = Worker("Osvaldo", "Aquino", "M", "5'8", 170, 22, 40, 50000)
+_worker = Worker("Ana", "Ribon", "M", "5'8", 170, 22, 40, 50000)
+print(_worker.first_name)
+
+_worker.first_name ="Osvaldo"
+print(_worker.first_name)
+print(_worker._person_count)
+
+_w = Worker("Juan", "Rivera", "M", "5'8", 170, 22, 40, 50000)
+print(_w._person_count)
+
+_wo = Worker("Jose", "Colon", "M", "5'8", 170, 22, 40, 50000)
+print(_wo._person_count)
+
+_wor = Worker("Jeziel", "Torres", "M", "5'8", 170, 22, 40, 50000)
+print(_wor._person_count)
+print(_wor._worker_count)
+
+
 _worker.talk()
 
-_doctor = Doctor("Osvaldo", "Aquino", "M", "5'8", 170, 22, 40, 90000, "Generalist")
+_doctor = Doctor("Ale", "Pagan", "M", "5'8", 170, 22, 40, 90000, "Generalist")
+print(_doctor._doctor_count)
+print(_doctor._person_count)
+
 _doctor.talk()
 
 _engineer =  Engineer("Osvaldo", "Aquino", "M", "5'8", 170, 22, 40, 100000, "Computer", "Home", True)

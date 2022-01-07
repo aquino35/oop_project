@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import ClassVar
 from .worker import Worker
 
 @dataclass
@@ -14,6 +15,12 @@ class Engineer(Worker):
     _company: str
     _has_masters: bool = False
     _has_doctorate: bool = False
+    _engineer_count : ClassVar[int] = 0
+
+
+    def __post_init__(self):
+        Engineer._person_count+=1
+        Engineer._engineer_count+=1
 
 
     @property
@@ -59,4 +66,4 @@ class Engineer(Worker):
     def talk(self) -> str:
         print(f'Hello! My name is {self._first_name} {self._last_name}, I am a {self._type} engineer that works {self.weekly_hours} a week at {self.company} and I have a salary of {self._salary}.')
         print(f'I have a masters degree: {self.has_masters}')
-        print(f'I have a masters degree: {self.has_doctorate}')
+        print(f'I have a doctorate degree: {self.has_doctorate}')

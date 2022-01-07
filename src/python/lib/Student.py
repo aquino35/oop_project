@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 from .person import Person
+from typing import ClassVar
+
 
 @dataclass
 class Student(Person):
@@ -12,6 +14,14 @@ class Student(Person):
 
     _institution: str
     _major : str
+    _student_count : ClassVar[int] = 0
+
+
+    def __post_init__(self):
+        Student._person_count+=1
+        Student._student_count+=1
+
+
 
     @property
     def institution(self) -> str:

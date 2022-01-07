@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import ClassVar
 from .worker import Worker
 
 @dataclass
@@ -11,6 +12,13 @@ class Doctor(Worker):
     """
 
     _type: str
+    _doctor_count : ClassVar[int] = 0
+
+
+    def __post_init__(self):
+        Doctor._person_count+=1
+        Doctor._doctor_count+=1
+
 
 
     @property
