@@ -9,45 +9,46 @@ from .worker import Worker
 
 @dataclass
 class Doctor(Worker):
-    """## Help on the Doctor module:
-    --------------------------------
-    ### Name
+    """Help on the Doctor module:
+
+    Name
 
         Doctor 
 
-    ---------------------
-    ### Description 
+    Description 
 
-        The doctor class is developed to simulate a person that is an doctor. 
+        The doctor class is developed to simulate a person that is a doctor.
 
         This class inherits attributes and methods from the Worker class.
 
-        @param first_name - first name of doctor. 
+        - property decorator: getters for class. 
+        - setter decorator: setters for class.
 
-        @param last_name - last name of doctor.
+    Args
 
-        @param gender - gender of doctor.
+        first_name: first name of doctor. 
 
-        @param height - height of doctor. 
+        last_name: last name of doctor.
 
-        @param weight - weight of doctor.
+        gender: gender of doctor.
 
-        @param age - age of doctor. 
+        height: height of doctor. 
 
-        @param weekly hours - weekly hours of doctor.
+        weight: weight of doctor.
 
-        @param salary - salary of doctor.
+        age: age of doctor. 
 
-        @param type - type of doctor.
+        weekly hours: weekly hours of doctor.
 
-        @property decorator: getters for class. 
+        salary: salary of doctor.
 
-        @setter decorator: setters for class.
+        type: type of doctor.
 
-        @example: doctor = Doctor("Ale", "Pagan", "M", "5'8", 170, 22, 40, 90000, "Generalist")
+    Usage
+        
+        doctor = Doctor("Ale", "Pagan", "M", "5'8", 170, 22, 40, 90000, "Generalist")
 
-    ---------------------
-    ### Package Contents
+    Package Contents
 
         - _first_name
         - _last_name
@@ -69,8 +70,9 @@ class Doctor(Worker):
         - salary() || salary(salary:int)
         - type() || type(type:str)
 
-    ---------------------
-    @author: Osvaldo Aquino
+    Author 
+
+        Osvaldo Aquino
     """
 
     _type: str # represents the type of doctor.
@@ -87,8 +89,13 @@ class Doctor(Worker):
 
     @property
     def type(self) -> str:
-        """ @return: type of doctor.
-            @example: doctor.type """
+        """ Returns
+
+                type of doctor.
+
+            Usage
+
+                doctor.type """
 
         return self._type
 
@@ -96,14 +103,23 @@ class Doctor(Worker):
     @type.setter
     def type(self, type: str) -> None:
         """ Sets the type attribute of the doctor given a string.
-            @param type: String that represents the new type that will be set.
-            @example: doctor.type = "Cardiologist" """
+
+            Args
+
+                type(str): Represents the new type that will be set.
+
+            Usage
+
+                doctor.type = "Cardiologist" """
 
         self._type = type
 
 
     def talk(self) -> str:
         """ Prints out useful information about the doctor object.
-            @example: doctor.talk()"""
+
+            Usage
+            
+                doctor.talk()"""
 
         print(f'Hello! My name is {self._first_name} {self._last_name}, I am a {self._type} doctor that works {self.weekly_hours} a week and I have a salary of {self._salary}.')

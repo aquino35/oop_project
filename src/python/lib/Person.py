@@ -8,35 +8,35 @@ from typing import ClassVar
 
 @dataclass
 class Person(ABC):
-    """## Help on the Person module:
-    --------------------------------
-    ### Name
+    """Help on the Person module
+
+    Name
 
         Person 
 
-    ---------------------
-    ### Description 
+    Description
     
         The person class is an abstact base class used to create the base person of the collection.
 
-        @param first_name - first name of person. 
+        - property decorator: getters for class. 
         
-        @param last_name - last name of person. 
-        
-        @param gender - gender of person. 
-        
-        @param height - height of person. 
-        
-        @param weight - weight of person. 
-        
-        @param age - age of person. 
-        
-        @property decorator: getters for class. 
-        
-        @setter decorator: setters for class.
+        - setter decorator: setters for class.
 
-    ---------------------
-    ### Package Contents
+    Args
+
+        first_name: first name of person. 
+        
+        last_name: last name of person. 
+        
+        gender: gender of person. 
+        
+        height: height of person. 
+        
+        weight: weight of person. 
+        
+        age: age of person. 
+
+    Package Contents
 
         - _first_name
         - _last_name
@@ -51,8 +51,9 @@ class Person(ABC):
         - weight() || weight(weight:int)
         - age() || age(age:int)
 
-    ---------------------
-    @author: Osvaldo Aquino
+    Author
+
+        Osvaldo Aquino
     """
 
     _first_name : str # represents first name of person
@@ -73,48 +74,77 @@ class Person(ABC):
 
     @property
     def first_name(self) -> str:
-        """ @return: First name of the person.
-            @example: person.first_name """
+        """ Returns
+
+                First name of the person.
+                
+            Usage
+
+                person.first_name """
         
         return self._first_name
 
 
     @property
     def last_name(self) -> str:
-        """ @return: Last name of the person.
-            @example: person.last_name """
+        """ Returns
+
+                Last name of the person.
+
+            Usage 
+
+                person.last_name """
 
         return self._last_name
 
 
     @property
     def gender(self) -> str:
-        """ @return: The gender of the person.
-            @example: person.gender"""
+        """ Returns 
+
+                The gender of the person.
+
+            Usage
+
+                person.gender """
         
         return self._gender
 
 
     @property
     def height(self) -> str:
-        """ @return: The height of the person.
-            @example: person.height"""
+        """ Returns
+
+                The height of the person.
+
+            Usage
+
+                person.height """
         
         return self._height
 
 
     @property
     def weight(self) -> int:
-        """ @return: The weight of the person.
-            @example: person.weight"""
+        """ Returns
+
+                The weight of the person.
+
+            Usage
+
+                person.weight"""
 
         return self._weight
 
 
     @property
     def age(self) -> int:
-        """ @return: The age of the person.
-            @example: person.age" """
+        """ Returns 
+
+                The age of the person.
+
+            Usage
+                person.age" """
         
         return self._age
 
@@ -122,8 +152,11 @@ class Person(ABC):
     @first_name.setter
     def first_name(self, first_name: str) -> None:
         """ Sets the first name attribute of the person given a string.
-            @param first_name: String that represents the new first name that will be set. 
-            @example: person.first_name = "Osvaldo" """
+
+            Args
+                first_name: String that represents the new first name that will be set. 
+            Usage 
+                person.first_name = "Osvaldo" """
 
         self._first_name = first_name
 
@@ -131,8 +164,14 @@ class Person(ABC):
     @last_name.setter
     def last_name(self, last_name: str) -> None:
         """ Sets the last name attribute of the person given a string.
-            @param last_name: String that represents the new last name that will be set.
-            @example: person.last_name = "Aquino" """
+
+            Args 
+
+                last_name: String that represents the new last name that will be set.
+
+            Usage 
+
+                person.last_name = "Aquino" """
 
         self._last_name = last_name
 
@@ -140,8 +179,14 @@ class Person(ABC):
     @gender.setter
     def gender(self, gender: str) -> None:
         """ Sets the gender attribute of the person given a string.
-            @param gender: String that represents the new gender that will be set. 
-            @example: person.gender = "M" """
+
+            Args 
+
+                gender: String that represents the new gender that will be set. 
+
+            Usage
+
+                person.gender = "M" """
 
         self._gender = gender
 
@@ -149,8 +194,14 @@ class Person(ABC):
     @height.setter
     def height(self, height: str) -> None:
         """ Sets the height attribute of the person given a string.
-            @param height: String that represents the new height that will be set.
-            @example: person.height = "5'8" """
+
+            Args 
+
+                height: String that represents the new height that will be set.
+
+            Usage
+            
+                person.height = "5'8" """
        
         self._height = height
 
@@ -158,8 +209,14 @@ class Person(ABC):
     @weight.setter
     def weight(self, weight: int) -> None:
         """ Sets the weight attribute of the person given an integer.
-            @param weight: Integer that represents the new weight that will be set.
-            @example: person.weight = 170 """
+
+            Args 
+
+                weight: Integer that represents the new weight that will be set.
+
+            Usage
+
+                person.weight = 170 """
         
         self._weight = weight
 
@@ -167,7 +224,13 @@ class Person(ABC):
     @age.setter
     def age(self, age: int) -> None:
         """ Sets the age attribute of the person given an integer.
-            @param age: Integer that represents the new age that will be set.
-            @example: person.age = 22 """
+
+            Args 
+
+                age: Integer that represents the new age that will be set.
+
+            Usage
+            
+                person.age = 22 """
         
         self._age = age

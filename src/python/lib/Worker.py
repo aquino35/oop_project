@@ -9,43 +9,47 @@ from typing import ClassVar
 
 @dataclass
 class Worker(Person):
-    """## Help on the Worker module:
-    --------------------------------
-    ### Name
+    """Help on the Worker module:
+    
+    Name
 
         Worker 
 
-    ---------------------
-    ### Description 
+    
+    Description 
 
         The worker class is developed to simulate a person that is a worker. 
 
         This class inherits attributes and methods from the Person class.
 
-        @param first_name - first name of worker. 
+        - property decorator: getters for class. 
 
-        @param last_name - last name of worker.
+        - setter decorator: setters for class.
 
-        @param gender - gender of worker.
+    Args
 
-        @param height - height of worker. 
+        first_name: first name of worker. 
 
-        @param weight - weight of worker.
+        last_name: last name of worker.
 
-        @param age - age of worker. 
+        gender: gender of worker.
 
-        @param weekly hours - weekly hours of worker.
+        height: height of worker. 
 
-        @param salary - salary of worker.
+        weight: weight of worker.
 
-        @property decorator: getters for class. 
+        age: age of worker. 
 
-        @setter decorator: setters for class.
+        weekly hours: weekly hours of worker.
 
-        @example: worker = Worker("Osvaldo", "Aquino", "M", "5'8", 170, 22, 40, 50000)
+        salary: salary of worker.
 
-    ---------------------
-    ### Package Contents
+
+    Usage
+
+        worker = Worker("Osvaldo", "Aquino", "M", "5'8", 170, 22, 40, 50000)
+
+    Package Contents
 
         - _first_name
         - _last_name
@@ -65,8 +69,9 @@ class Worker(Person):
         - weekly_hours() || weekly_hours(weekly_hours:int)
         - salary() || salary(salary:int)
 
-    ---------------------
-    @author: Osvaldo Aquino
+    Author
+        
+        Osvaldo Aquino
     """
 
     _weekly_hours: int # represents weekly hours of the worker
@@ -83,16 +88,26 @@ class Worker(Person):
 
     @property
     def weekly_hours(self) -> int:
-        """ @return: Weekly hours of the worker.
-            @example: worker.weekly_hours """
+        """ Returns
+
+                Weekly hours of the worker.
+
+            Usage
+
+                worker.weekly_hours """
 
         return self._weekly_hours
 
 
     @property
     def salary(self) -> int:
-        """ @return: Salary of the worker.
-            @example: worker.salary """
+        """ Returns
+
+                Salary of the worker.
+
+            Usage
+
+                worker.salary """
 
         return self._salary
 
@@ -100,8 +115,14 @@ class Worker(Person):
     @weekly_hours.setter
     def weekly_hours(self, weekly_hours: int) -> None:
         """ Sets the weekly hours attribute of the worker given an integer.
-            @param weekly_hours: Integer that represents the new weekly hours that will be set.
-            @example: worker.weekly_hours = 40 """
+
+            Args
+
+                weekly_hours(int): Represents the new weekly hours that will be set.
+
+            Usage
+
+                worker.weekly_hours = 40 """
 
         self._weekly_hours = weekly_hours
 
@@ -109,14 +130,23 @@ class Worker(Person):
     @salary.setter
     def salary(self, salary: int) -> None:
         """ Sets the salary attribute of the worker given an integer.
-            @param salary: Integer that represents the new salary that will be set.
-            @example: worker.salary = 90000 """
+            
+            Args
+
+                salary(int): Represents the new salary that will be set.
+
+            Usage
+
+                worker.salary = 90000 """
 
         self._salary = salary
 
 
     def talk(self) -> str:
         """ Prints out useful information about the worker object.
-            @example: worker.talk()"""
+
+            Usage
+            
+                worker.talk()"""
 
         print(f'Hello! My name is {self._first_name} {self._last_name}, I am a worker that works {self.weekly_hours} a week and I have a salary of {self._salary}.')

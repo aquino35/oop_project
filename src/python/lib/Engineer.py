@@ -9,51 +9,54 @@ from .worker import Worker
 
 @dataclass
 class Engineer(Worker):
-    """## Help on the Engineer module:
-    --------------------------------
-    ### Name
+    """Help on the Engineer module:
+
+    Name
 
         Engineer 
 
-    ---------------------
-    ### Description 
+    Description 
 
         The engineer class is developed to simulate a person that is an engineer. 
 
         This class inherits attributes and methods from the Worker class.
 
-        @param first_name - first name of engineer. 
+        - property decorator: getters for class. 
 
-        @param last_name - last name of engineer.
+        - setter decorator: setters for class.
 
-        @param gender - gender of engineer.
+    Args
 
-        @param height - height of engineer. 
+        first_name: first name of engineer. 
 
-        @param weight - weight of engineer.
+        last_name: last name of engineer.
 
-        @param age - age of engineer. 
+        gender: gender of engineer.
 
-        @param weekly hours - weekly hours of engineer.
+        height: height of engineer. 
 
-        @param salary - salary of engineer.
+        weight: weight of engineer.
 
-        @param type - type of engineer.
+        age: age of engineer. 
 
-        @param company - company of engineer.
+        weekly hours: weekly hours of engineer.
 
-        @param has_masters - True is enginner has a masters degree. Default is false.
+        salary: salary of engineer.
 
-        @param has_doctorate - True is enginner has a doctorate degree. Default is false.
+        type: type of engineer.
 
-        @property decorator: getters for class. 
+        company: company of engineer.
 
-        @setter decorator: setters for class.
+        has_masters: True is enginner has a masters degree. Default is false.
 
-        @example: engineer = Engineer("Osvaldo", "Aquino", "M", "5'8", 170, 22, 40, 100000, "Computer", "Home", True)
+        has_doctorate: True is enginner has a doctorate degree. Default is false.
 
-    ---------------------
-    ### Package Contents
+
+    Usage
+
+        engineer = Engineer("Osvaldo", "Aquino", "M", "5'8", 170, 22, 40, 100000, "Computer", "Home", True)
+
+    Package Contents
 
         - _first_name
         - _last_name
@@ -78,8 +81,9 @@ class Engineer(Worker):
         - has_masters() || has_masters(has_master:bool)
         - has_doctorate() || has_doctorate(has_master:bool)
 
-    ---------------------
-    @author: Osvaldo Aquino
+    Author 
+
+        Osvaldo Aquino
     """
 
     _type: str # represents the type of engineer.
@@ -99,32 +103,52 @@ class Engineer(Worker):
 
     @property
     def type(self) -> str:
-        """ @return: type of engineer.
-            @example: engineer.type """
+        """ Returns
+
+                type of engineer.
+
+            Usage
+
+                engineer.type """
 
         return self._type
 
 
     @property
     def company(self) -> str:
-        """ @return: company of engineer.
-            @example: engineer.company """
+        """ Returns
+
+                company of engineer.
+
+            Usage
+
+                engineer.company """
 
         return self._company
 
 
     @property
     def has_masters(self) -> bool:
-        """ @return: True if the engineer has a masters degree. Otherwise, False.
-            @example: engineer.has_masters """
+        """ Returns
+
+                True if the engineer has a masters degree. Otherwise, False.
+
+            Usage
+
+                engineer.has_masters """
 
         return self._has_masters
 
 
     @property
     def has_doctorate(self) -> bool:
-        """ @return: True if the engineer has a doctorate degree. Otherwise, False.
-            @example: engineer.has_doctorate """
+        """ Returns
+
+                True if the engineer has a doctorate degree. Otherwise, False.
+
+            Usage
+
+                engineer.has_doctorate """
 
         return self._has_doctorate
 
@@ -132,8 +156,14 @@ class Engineer(Worker):
     @type.setter
     def type(self, type: str) -> None:
         """ Sets the type attribute of the engineer given a string.
-            @param type: String that represents the new type that will be set.
-            @example: engineer.type = "Electrical" """
+
+            Args
+
+                type(str): Represents the new type that will be set.
+
+            Usage
+
+                engineer.type = "Electrical" """
 
         self._type = type
 
@@ -141,8 +171,14 @@ class Engineer(Worker):
     @company.setter
     def company(self, company: str) -> None:
         """ Sets the company attribute of the engineer given a string.
-            @param company: String that represents the new company that will be set.
-            @example: engineer.company = "Texas Instrument" """
+
+            Args
+
+                company(str): Represents the new company that will be set.
+
+            Usage
+
+                engineer.company = "Texas Instrument" """
 
         self._company = company  
 
@@ -150,8 +186,14 @@ class Engineer(Worker):
     @has_masters.setter
     def has_masters(self, has_masters: bool) -> None:
         """ Sets the has_masters attribute of the engineer given a boolean.
-            @param has_masters: Boolean that represents the new has_masters that will be set.
-            @example: engineer.has_masters = True """
+
+            Args
+
+                has_masters(bool): Represents the new has_masters that will be set.
+
+            Usage
+
+                engineer.has_masters = True """
             
         self._has_masters = has_masters  
 
@@ -159,15 +201,24 @@ class Engineer(Worker):
     @has_doctorate.setter
     def has_doctorate(self, has_doctorate: bool) -> None:
         """ Sets the has_doctorate attribute of the engineer given a boolean.
-            @param has_boolean: Boolean that represents the new has_doctorate that will be set.
-            @example: engineer.has_doctorate = True """
+
+            Args
+
+                has_boolean(bool): Represents the new has_doctorate that will be set.
+
+            Usage
+
+                engineer.has_doctorate = True """
 
         self._has_doctorate = has_doctorate   
 
 
     def talk(self) -> str:
         """ Prints out useful information about the engineer object.
-            @example: engineer.talk() """
+
+            Usage
+
+                engineer.talk() """
 
         print(f'Hello! My name is {self._first_name} {self._last_name}, I am a {self._type} engineer that works {self.weekly_hours} a week at {self.company} and I have a salary of {self._salary}.')
         print(f'I have a masters degree: {self.has_masters}')

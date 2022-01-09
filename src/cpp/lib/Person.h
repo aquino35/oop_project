@@ -22,7 +22,8 @@ class Person
         string _gender;
         string _height; 
         string _weight;
-        int age;
+        int _age;
+        static int _person_count;
 
     public:
     
@@ -42,6 +43,8 @@ class Person
 
         /* Allows each person to talk. */
         virtual void talk() =  0; 
+
+        //Person(string fname, string lname, string g, string h, int w, int age);
 
         /* Abstract destructor */
         virtual ~Person() = 0;

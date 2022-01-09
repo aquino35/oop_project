@@ -9,43 +9,41 @@ from typing import ClassVar
 
 @dataclass
 class Student(Person):
-    """## Help on the Student module:
-    ----------------------------------
-    ### Name
+    """Help on the Student module:
+    
+    Name
 
         Student 
 
-    ---------------------
-    ### Description 
+    
+    Description 
 
         The student class is developed to simulate a person that is a student. 
 
         This class inherits attributes and methods from the Person class.
 
-        @param first_name - first name of student. 
+        first_name: first name of student. 
 
-        @param last_name - last name of student.
+        last_name: last name of student.
 
-        @param gender - gender of student.
+        gender: gender of student.
 
-        @param height - height of student. 
+        height: height of student. 
 
-        @param weight - weight of student.
+        weight:  weight of student.
 
-        @param age - age of student. 
+        age:  age of student. 
 
-        @param institution - institution of the student.
+        institution: institution of the student.
 
-        @param major - major of the student.
+        major: major of the student.
 
-        @property decorator: getters for class. 
+    Usage
 
-        @setter decorator: setters for class.
+        student = Student("Osvaldo", "Aquino", "M", "5'8", 170, 25, "UPRM", "ICOM")
 
-        @example: student = Student("Osvaldo", "Aquino", "M", "5'8", 170, 25, "UPRM", "ICOM")
-
-    ---------------------
-    ### Package Contents
+    
+    Package Contents
 
         - _first_name
         - _last_name
@@ -66,8 +64,9 @@ class Student(Person):
         - institution() || institution(institution:str)
         - major() || major(major:str)
 
-    ---------------------
-    @author: Osvaldo Aquino
+    Author
+    
+        Osvaldo Aquino
     """
 
     _institution: str # represents institution of the student
@@ -84,16 +83,26 @@ class Student(Person):
 
     @property
     def institution(self) -> str:
-        """ @return: Institution of the student.
-            @example: student.institution """
+        """ Returns
+
+                Institution of the student.
+
+            Usage
+
+                student.institution """
 
         return self._institution
 
 
     @property
     def major(self) -> str:
-        """ @return: Major of the student.
-            @example: student.major """
+        """ Returns
+
+                Major of the student.
+
+            Usage
+
+                student.major """
 
         return self._major
 
@@ -101,8 +110,14 @@ class Student(Person):
     @institution.setter
     def institution(self, institution: str) -> None:
         """ Sets the institution attribute of the student given a string.
-            @param institution: String that represents the new institution that will be set.
-            @example: student.institution = "UPRM" """
+
+            Args
+
+                institution(str): Represents the new institution that will be set.
+
+            Usage
+
+                student.institution = "UPRM" """
 
         self._institution = institution
 
@@ -110,25 +125,44 @@ class Student(Person):
     @major.setter
     def major(self, major: str) -> None:
         """ Sets the major attribute of the student given a string.
-            @param major: String that represents the new major that will be set.
-            @example: student.major = "ICOM" """
+            
+            Args
+
+                major(str): Represents the new major that will be set.
+
+            Usage
+
+                student.major = "ICOM" """
 
         self._major = major
 
 
     def talk(self) -> str:
         """ Prints out useful information about the student object.
-            @example: student.talk()"""
+
+            Usage
+
+                student.talk()"""
 
         print(f'Hello! My name is {self._first_name} {self._last_name}, I am a student at {self.institution}, studying {self._major}')
 
     
     def calculate(self, *args: int) -> str:
         """ Calculates the final grade of a student given a set of grades.
-            @param *args: Integers representing all the grades the student has accumulated.
-            @print: The final grade of the student
-            @example: student.calculate(100,100,80,100)
-            @example: student.calculate(90,85) """
+
+            Args
+
+                *args(int): Represents all the grades the student has accumulated.
+
+            Returns
+
+                A print of the final grade of the student
+
+            Usage
+
+                student.calculate(100,100,80,100)
+
+                student.calculate(90,85) """
 
         num_grades = len(args)
         final_grade = sum(args)/num_grades

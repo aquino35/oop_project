@@ -9,45 +9,51 @@ from .worker import Worker
 
 @dataclass
 class Lawyer(Worker):
-    """## Help on the Lawyer module:
-    ---------------------------------
-    ### Name
+    """Help on the Lawyer module:
+    
+    Name
 
         Lawyer 
 
-    ---------------------
-    ### Description 
+    
+    Description 
 
         The Lawyer class is developed to simulate a person that is a Lawyer. 
 
         This class inherits attributes and methods from the Worker class.
 
-        @param first_name - first name of lawyer. 
 
-        @param last_name - last name of lawyer.
+        - property decorator: getters for class. 
 
-        @param gender - gender of lawyer.
+        - setter decorator: setters for class.
 
-        @param height - height of lawyer. 
+    Args
 
-        @param weight - weight of lawyer.
+        first_name: first name of lawyer. 
 
-        @param age - age of lawyer. 
+        last_name: last name of lawyer.
 
-        @param weekly hours - weekly hours of lawyer.
+        gender: gender of lawyer.
 
-        @param salary - salary of lawyer.
+        height: height of lawyer. 
 
-        @param law firm - lawfirm of lawyer.
+        weight: weight of lawyer.
 
-        @property decorator: getters for class. 
+        age: age of lawyer. 
 
-        @setter decorator: setters for class.
+        weekly hours: weekly hours of lawyer.
 
-        @example: lawyer = Lawyer("Osvaldo", "Aquino", "M", "5'8", 170, 22, 40, 100000, "Vivoni Law Office, LLC")
+        salary: salary of lawyer.
 
-    ---------------------
-    ### Package Contents
+        law firm: lawfirm of lawyer.
+
+
+    Usage
+
+         lawyer = Lawyer("Osvaldo", "Aquino", "M", "5'8", 170, 22, 40, 100000, "Vivoni Law Office, LLC")
+
+    
+    Package Contents
 
         - _first_name
         - _last_name
@@ -69,8 +75,9 @@ class Lawyer(Worker):
         - salary() || salary(salary:int)
         - law_firm() || law_firm(law_firm:str)
 
-    ---------------------
-    @author: Osvaldo Aquino
+    Author
+
+        Osvaldo Aquino
     """
 
     _law_firm: str # represents the law firm of the worker
@@ -87,8 +94,13 @@ class Lawyer(Worker):
 
     @property
     def law_firm(self) -> str:
-        """ @return: Law firm of the lawyer.
-            @example: lawyer.law_firm """
+        """ Returns
+
+                Law firm of the lawyer.
+
+            Usage
+
+                lawyer.law_firm """
 
         return self._law_firm
 
@@ -96,14 +108,23 @@ class Lawyer(Worker):
     @law_firm.setter
     def law_firm(self, law_firm: str) -> None:
         """ Sets the law firm attribute of the lawyer given a string.
-            @param law_firm: String that represents the new law firm that will be set.
-            @example: lawyer.law_firm = "Vivoni Law Office, LLC" """
+
+            Args
+
+                law_firm(str): Represents the new law firm that will be set.
+
+            Usage
+
+                lawyer.law_firm = "Vivoni Law Office, LLC" """
 
         self._law_firm = law_firm
 
 
     def talk(self) -> str:
         """ Prints out useful information about the lawyer object.
-            @example: lawyer.talk()"""
+        
+            Usage
+            
+                lawyer.talk()"""
 
         print(f'Hello! My name is {self._first_name} {self._last_name}, I am a lawyer that works {self.weekly_hours} a week at {self._law_firm} and I have a salary of {self._salary}.')
