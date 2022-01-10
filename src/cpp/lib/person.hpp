@@ -9,26 +9,18 @@
  * 
  */
 
-#include <string>                                                              
+#include <string> 
+
+
 #ifndef __PERSON_H_INCLUDED__  
 #define __PERSON_H_INCLUDED__ 
-
-
 class Person
 {
-
-    private:
-
-        std::string _first_name;
-        std::string _last_name;
-        std::string _gender;
-        std::string _height; 
-        std::string _weight;
-        int _age;
-        static int _person_count;
-
     public:
-    
+
+        // abstract method that allows each person to talk
+        virtual void talk() =  0; 
+
         // getters
         std::string first_name(); 
         std::string last_name(); 
@@ -44,10 +36,16 @@ class Person
         void height(std::string height); 
         void age(int age); 
 
-        // allows each person to talk
-        virtual void talk() =  0; 
-
         //Person(std::string fname, std::string lname, std::string g, std::string h, int w, int age);
-};
 
+    protected:
+
+        std::string _first_name;
+        std::string _last_name;
+        std::string _gender;
+        std::string _height; 
+        std::string _weight;
+        int _age;
+        static int _person_count;
+};
 #endif

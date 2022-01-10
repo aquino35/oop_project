@@ -14,23 +14,26 @@
 
 #ifndef __STUDENT_H_INCLUDED__  
 #define __STUDENT_H_INCLUDED__ 
-
 class Student:public Person
 {
-    private:
-        std::string _institution;
-        std::string _major;
-        static int _student_count;
-
     public:
 
         Student(std::string fname, std::string lname, std::string g, std::string h, int w, int age, std::string ints, std::string major);
         ~Student();
+        void calculate(int* args);
+
+        // getters
         std::string institution(void);
         std::string major(void);
+
+        //setters
         void institution(std::string institution);
         void major(std::string major);
-        void calculate(int* args);
-};
 
+    private:
+    
+        std::string _institution;
+        std::string _major;
+        static int _student_count;
+};
 #endif

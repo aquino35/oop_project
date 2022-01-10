@@ -14,23 +14,26 @@
 
 #ifndef __WORKER_H_INCLUDED__  
 #define __WORKER_H_INCLUDED__ 
-
 class Worker:public Person
 {
-    private:
+    public:
+
+        Worker() = default;
+        Worker(std::string fname, std::string lname, std::string g, std::string h, int w, int age, int hours, int salary);
+        ~Worker();
+
+        // getters
+        int weekly_hours();
+        int salary();
+
+        // setters
+        void weekly_hours(int weekly_hours);
+        void salary(int salary);
+
+    protected:
 
         int _weekly_hours;
         int _salary;
         static int _worker_count;
-
-    public:
-
-        Worker(std::string fname, std::string lname, std::string g, std::string h, int w, int age, int hours, int salary);
-        ~Worker();
-        int weekly_hours();
-        int salary();
-        void weekly_hours(int weekly_hours);
-        void salary(int salary);
 };
-
 #endif
