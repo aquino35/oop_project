@@ -9,15 +9,26 @@
  * 
  */
 
-#include <cpp/lib/person.hpp>
+#include <cpp/lib/worker.hpp>
 
 #ifndef __DOCTOR_H_INCLUDED__  
 #define __DOCTOR_H_INCLUDED__ 
 
-
-class Doctor:public Person
+class Doctor:public Worker
 {
+    private:
 
+        std::string _type;
+        static int _doctor_count;
+
+    public:
+
+        Doctor(std::string fname, std::string lname, std::string g, std::string h, int w, int age, int hours, int salary, std::string type);
+        ~Doctor();
+        // getters
+        std::string type(); 
+        // setters
+        void type(std::string type); 
 };
 
 #endif

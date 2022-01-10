@@ -29,27 +29,25 @@ class Person
 
     public:
     
-        /* getters */
-        virtual std::string first_name() =  0; 
-        virtual std::string last_name() =  0; 
-        virtual std::string gender() =  0;
-        virtual std::string height() =  0; 
-        virtual std::string weight() =  0; 
+        // getters
+        std::string first_name(); 
+        std::string last_name(); 
+        std::string gender();
+        std::string height(); 
+        std::string weight(); 
+        int age(); 
 
-        /* setters */
-        virtual void first_name(std::string first_name) =  0; 
-        virtual void last_name(std::string last_name) =  0; 
-        virtual void gender(std::string gender) =  0; 
-        virtual void height(std::string height) =  0; 
-        virtual void age(int age) =  0; 
+        // setters
+        void first_name(std::string first_name); 
+        void last_name(std::string last_name); 
+        void gender(std::string gender); 
+        void height(std::string height); 
+        void age(int age); 
 
-        /* Allows each person to talk. */
+        // allows each person to talk
         virtual void talk() =  0; 
 
         //Person(std::string fname, std::string lname, std::string g, std::string h, int w, int age);
-
-        /* Abstract destructor */
-        virtual ~Person() = 0;
 };
 
 #endif

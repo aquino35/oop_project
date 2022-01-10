@@ -30,10 +30,12 @@ class Engineer:public Worker
 
         Engineer(std::string fname, std::string lname, std::string g, std::string h, int w, int age, int hours, int salary, std::string type, std::string comp, bool masters, bool doctorate);
         ~Engineer();
+        // getters
         std::string type();
         std::string company();
         bool has_masters();
         bool has_doctorate();
+        // setters
         void type(std::string type);
         void company(std::string company);
         void has_masters(bool has_masters);
