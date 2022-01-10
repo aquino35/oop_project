@@ -9,7 +9,7 @@
  * 
  */
 
-#include <cpp/lib/worker.hpp>
+#include "lib/headers/worker.hpp"
 
 
 Worker::Worker(std::string fname, std::string lname, std::string g, std::string h, int w, int age, int hours, int salary)
@@ -23,4 +23,10 @@ Worker::Worker(std::string fname, std::string lname, std::string g, std::string 
     this->_weekly_hours = hours;
     _person_count++;
     _worker_count++;
+}
+
+void Worker::talk(void)
+{
+    std::cout << "Hello! My name is" << this->_first_name << this->_last_name << ", I am a workers that works"
+    << this->_weekly_hours << "a week and I have a salary of" << this->_salary << "." << std::endl;;
 }

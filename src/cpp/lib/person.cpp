@@ -9,7 +9,7 @@
  * 
  */
 
-#include <cpp/lib/person.hpp>
+#include "lib/headers/person.hpp"
 
 
 std::string Person::first_name(void)

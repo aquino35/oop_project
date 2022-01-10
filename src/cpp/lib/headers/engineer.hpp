@@ -9,7 +9,7 @@
  * 
  */
 
-#include <cpp/lib/worker.hpp>
+#include <lib/headers/worker.hpp>
 
 
 #ifndef __ENGINEER_H_INCLUDED__  
@@ -21,7 +21,9 @@ class Engineer:public Worker
 
         Engineer(std::string fname, std::string lname, std::string g, std::string h, int w, int age, int hours, int salary, std::string type, std::string comp, bool masters, bool doctorate);
         ~Engineer();
-        
+
+        virtual void talk();
+
         // getters
         std::string type();
         std::string company();

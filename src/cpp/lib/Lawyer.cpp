@@ -9,7 +9,8 @@
  * 
  */
 
-#include <cpp/lib/lawyer.hpp>
+#include <lib/headers/lawyer.hpp>
+
 
 
 Lawyer::Lawyer(std::string fname, std::string lname, std::string g, std::string h, int w, int age, int hours, int salary, std::string law_firm)
@@ -25,4 +26,23 @@ Lawyer::Lawyer(std::string fname, std::string lname, std::string g, std::string 
     _person_count++;
     _worker_count++;
     _lawyer_count++;
+}
+
+
+std::string Lawyer::law_firm(void)
+{
+    return this->_law_firm;
+}
+
+
+void Lawyer::law_firm(std::string law_firm)
+{
+    this->_law_firm = law_firm;
+}
+
+
+void Lawyer::talk(void)
+{
+    std::cout << "Hello! My name is" << this->_first_name << this->_last_name << ", I am a lawyer that works" << this->_weekly_hours
+    << "a week at" << this->_law_firm << " and I have a salary of " << this->_salary << "." << std::endl;;
 }

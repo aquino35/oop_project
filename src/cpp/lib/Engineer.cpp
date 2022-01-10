@@ -9,7 +9,7 @@
  * 
  */
 
-#include <cpp/lib/engineer.hpp>
+#include <lib/headers/engineer.hpp>
 
 
 Engineer::Engineer(std::string fname, std::string lname, std::string g, std::string h, int w, int age, int hours, int salary, std::string type, std::string comp, bool masters, bool doctorate)
@@ -28,4 +28,15 @@ Engineer::Engineer(std::string fname, std::string lname, std::string g, std::str
     _person_count++;
     _worker_count++;
     _engineer_count++;
+}
+
+
+void Engineer::talk(void)
+{
+    std::cout << "Hello! My name is" << this->_first_name << this->_last_name << ", I am a" << this->_type << "engineer that works" 
+    << this->_weekly_hours << "a week at" << this->_company << "and I have a salary of" << this->_salary << "." << std::endl;;
+
+    std::cout << "I have a masters degree:" << this->_has_masters << std::endl;;
+
+    std::cout << "I have a doctorate degree:" << this->_has_doctorate << std::endl;;
 }

@@ -9,7 +9,7 @@
  * 
  */
 
-#include <cpp/lib/person.hpp>
+#include <lib/headers/person.hpp>
 
 
 #ifndef __STUDENT_H_INCLUDED__  
@@ -20,6 +20,8 @@ class Student:public Person
 
         Student(std::string fname, std::string lname, std::string g, std::string h, int w, int age, std::string ints, std::string major);
         ~Student();
+
+        virtual void talk();
         void calculate(int* args);
 
         // getters

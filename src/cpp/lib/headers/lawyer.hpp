@@ -9,7 +9,7 @@
  * 
  */
 
-#include <cpp/lib/worker.hpp>
+#include <lib/headers/worker.hpp>
 
 
 #ifndef __LAWYER_H_INCLUDED__  
@@ -20,6 +20,8 @@ class Lawyer:public Worker
 
         Lawyer(std::string fname, std::string lname, std::string g, std::string h, int w, int age, int hours, int salary, std::string law_firm);
         ~Lawyer();
+
+        virtual void talk();
 
         std::string law_firm(void);
         

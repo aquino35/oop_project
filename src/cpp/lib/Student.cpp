@@ -9,7 +9,7 @@
  * 
  */
 
-#include <cpp/lib/student.hpp>
+#include <lib/headers/student.hpp>
 
 
 Student::Student(std::string fname, std::string lname, std::string g, std::string h, int w, int age, std::string ints, std::string major)
@@ -24,4 +24,11 @@ Student::Student(std::string fname, std::string lname, std::string g, std::strin
     this->_major = major;
     _person_count++;
     _student_count++;
+}
+
+
+void Student::talk(void)
+{
+    std::cout << "Hello! My name is" << this->_first_name << this->_last_name << 
+    ", I am a student at" << this->_institution << "studying" << this->_major"." << std::endl;;
 }

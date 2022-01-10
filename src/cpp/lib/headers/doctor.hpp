@@ -9,7 +9,7 @@
  * 
  */
 
-#include <cpp/lib/worker.hpp>
+#include <lib/headers/worker.hpp>
 
 #ifndef __DOCTOR_H_INCLUDED__  
 #define __DOCTOR_H_INCLUDED__ 
@@ -20,6 +20,9 @@ class Doctor:public Worker
         Doctor() = default;
         Doctor(std::string fname, std::string lname, std::string g, std::string h, int w, int age, int hours, int salary, std::string type);
         ~Doctor();
+
+        virtual void talk();
+
 
         // getters
         std::string type(); 

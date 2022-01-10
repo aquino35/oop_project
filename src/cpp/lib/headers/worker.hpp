@@ -9,7 +9,7 @@
  * 
  */
 
-#include <cpp/lib/person.hpp>
+#include <lib/headers/person.hpp>
 
 
 #ifndef __WORKER_H_INCLUDED__  
@@ -21,6 +21,8 @@ class Worker:public Person
         Worker() = default;
         Worker(std::string fname, std::string lname, std::string g, std::string h, int w, int age, int hours, int salary);
         ~Worker();
+
+        virtual void talk();
 
         // getters
         int weekly_hours();
